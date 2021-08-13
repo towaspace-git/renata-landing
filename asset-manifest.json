@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/renata-landing/static/css/main.57b39134.chunk.css",
-    "main.js": "/renata-landing/static/js/main.b2e5808f.chunk.js",
-    "main.js.map": "/renata-landing/static/js/main.b2e5808f.chunk.js.map",
+    "main.js": "/renata-landing/static/js/main.6de626eb.chunk.js",
+    "main.js.map": "/renata-landing/static/js/main.6de626eb.chunk.js.map",
     "runtime-main.js": "/renata-landing/static/js/runtime-main.ef2ccc4b.js",
     "runtime-main.js.map": "/renata-landing/static/js/runtime-main.ef2ccc4b.js.map",
     "static/js/2.5e360d09.chunk.js": "/renata-landing/static/js/2.5e360d09.chunk.js",
@@ -26,6 +26,6 @@
     "static/js/runtime-main.ef2ccc4b.js",
     "static/js/2.5e360d09.chunk.js",
     "static/css/main.57b39134.chunk.css",
-    "static/js/main.b2e5808f.chunk.js"
+    "static/js/main.6de626eb.chunk.js"
   ]
 }
