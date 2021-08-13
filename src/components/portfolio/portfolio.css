@@ -1,0 +1,35 @@
+.portfolio {
+    margin-top: 110px;
+    height: 879px;
+    background: #f6f6f6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.portfolio-title {
+    margin-top: 112px;
+    font-family: Gilroy-Bold;
+    font-size: 34px;
+    color: #070707;
+}
+.portfolio-image-img {
+    max-width: 940px;
+    padding: 0 20px;
+    width: 100%;
+    margin-top: 47px;
+    height: 510px;
+    object-fit: cover;
+}
+.portfolio-links {
+    margin-top: 44px;
+}
+.portfolio-links-link {
+    font-family: Gilroy-Medium;
+    font-size: 18px;
+    text-decoration-line: none;
+    color: #070707;
+    cursor: pointer;
+}
+.portfolio-links-link:hover {
+    color: #828282;
+}

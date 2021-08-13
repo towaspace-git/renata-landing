@@ -1,0 +1,129 @@
+.header-phone {
+  position: fixed;
+  width: 100%;
+  visibility: hidden;
+  display: flex;
+  justify-content: flex-end;
+  top: 0px;
+}
+.hero-text-languages-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 80px;
+  transform: rotate(-90deg);
+  font-family: Gilroy-Bold;
+  font-size: 34px;
+  z-index: 50;
+  position: fixed;
+  bottom: 100px;
+  right: -28px;
+  color: #878787;
+}
+.header-phone-button {
+  margin-top: 30px;
+  margin-right: 30px;
+}
+.header-phone-links {
+  position: absolute;
+  background-color: white;
+  height: 100vh;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  padding-left: 46px;
+  display: flex;
+  flex-direction: column;
+}
+.header-phone-button {
+  cursor: pointer;
+  z-index: 50;
+}
+.header-phone-links-link {
+  font-family: Gilroy-Bold;
+  font-size: 34px;
+  color: #828282;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 34px 0px;
+  width: fit-content;
+}
+.header-phone-links-link:hover {
+  color: black;
+}
+.header {
+  height: 88px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header-links {
+  width: 940px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-links-link {
+  font-family: Gilroy-Bold;
+  font-size: 18px;
+  color: #828282;
+  cursor: pointer;
+  display: inline;
+  text-decoration: none;
+}
+.header-links-link:hover {
+  color: black;
+}
+.header-divider {
+  width: 940px;
+  border-bottom: 1px solid #828282;
+  margin-top: 31px;
+}
+
+.hero-text-languages-ru {
+  cursor: pointer;
+  margin-right: 5px;
+}
+.hero-text-languages-eng {
+  cursor: pointer;
+}
+.hero-text-languages-divider {
+  margin-right: 5px;
+}
+.active-language {
+  color: black;
+}
+@media screen and (max-width: 1070px) {
+  .header-links {
+    width: 800px;
+  }
+  .header-divider {
+    width: 800px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .header-links {
+    width: 700px;
+  }
+  .header-divider {
+    width: 700px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header-phone {
+    visibility: visible;
+  }
+  .header-desktop {
+    display: none;
+  }
+  .header {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+  }
+}

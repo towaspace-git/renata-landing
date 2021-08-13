@@ -1,0 +1,31 @@
+.about {
+  height: 506px;
+  background: #f6f6f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-text {
+  width: 485px;
+}
+.about-text-title {
+  font-family: Gilroy-Bold;
+  font-size: 34px;
+  color: #070707;
+  text-align: center;
+}
+.about-text-subtitle {
+  margin-top: 17px;
+  width: 100%;
+  font-family: Gilroy-Medium;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #070707;
+}
+@media screen and (max-width: 554px) {
+  .about-text {
+    width: 100%;
+    padding: 0 20px;
+  }
+}

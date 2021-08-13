@@ -1,0 +1,273 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: "Muli", sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #19121e;
+    background-color: white;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    outline: none;
+}
+.container {
+    width: 100%;
+    max-width: 1070px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+.row {
+    margin: 0 -10px;
+}
+
+.gallery-header {
+    position: sticky;
+    background-color: white;
+    top: 0px;
+    width: 100%;
+    padding: 15px 0px;
+    z-index: 1;
+}
+
+.header-container {
+    margin: 0 auto;
+    max-width: 1070px;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gallery-back-link {
+    font-family: gilroy-medium;
+    font-size: 23px;
+    color: #878787;
+    transition: 0.3s ease-in-out;
+}
+.gallery-back-link:hover {
+    color: black;
+}
+.gallery-title {
+    font-family: gilroy-medium;
+    font-size: 36px;
+}
+/*************************************************************/
+/* PORTFOLIO GRID                                            */
+/*************************************************************/
+
+.grid {
+    margin-bottom: 20px;
+}
+.grid-item {
+    width: 100%;
+    padding: 10px;
+}
+.grid-item a {
+    display: block;
+}
+.grid-item img {
+    display: block;
+    width: 100%;
+    -webkit-filter: grayscale(60%);
+    filter: grayscale(60%);
+    transition: 0.3s ease-in-out;
+}
+.grid-item a:hover img {
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+
+.grid-img:hover {
+    cursor: pointer;
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+/*************************************************************/
+/* FOOTER                                                    */
+/*************************************************************/
+
+.footer-row {
+    padding: 20px 0;
+    border-top: 2px solid #d9d9d9;
+}
+.footer-col {
+    padding: 0 10px;
+}
+.footer-col:first-child {
+    text-align: center;
+}
+.social-icons-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.social-icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    border-radius: 50%;
+    margin-left: 12px;
+    text-align: center;
+    font-size: 15px;
+    color: #a1787e;
+    background-color: rgba(20, 20, 20, 0);
+    transform: scale(1);
+    transition: 0.3s linear;
+}
+.social-icon:hover {
+    transform: scale(1.2);
+    background: #a1787e;
+    color: #fff;
+}
+
+/*************************************************************/
+/* MEDIA QUERIES                                             */
+/*************************************************************/
+
+@media (min-width: 480px) {
+    .grid,
+    .footer-row {
+        display: flex;
+    }
+    .grid-item,
+    .footer-col {
+        width: 50%;
+    }
+    .social-icons-wrapper {
+        justify-content: flex-end;
+        margin-top: 0;
+    }
+    .footer-col:first-child {
+        text-align: left;
+    }
+}
+
+@media (min-width: 768px) {
+    .grid-item {
+        width: 33.33333333333333%;
+    }
+    .burger {
+        display: none;
+    }
+    .header-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    #menu {
+        display: flex;
+        position: static;
+        visibility: visible;
+        opacity: 1;
+    }
+    #menu li {
+        padding-left: 40px;
+    }
+    #menu li a {
+        padding: 0;
+    }
+    #menu li a:before {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        right: 0;
+        left: auto;
+        width: 0;
+        height: 1px;
+        z-index: 2;
+        background-color: #19121e;
+        transition: 0.25s cubic-bezier(0.694, 0.048, 0.335, 1) 0.15s;
+    }
+    #menu li a:hover:before,
+    #menu li.current a:before {
+        width: 100%;
+        left: 0;
+    }
+    #menu li.current a:before {
+        background-color: #a1787e;
+    }
+}
+
+/* Style the Image Used to Trigger the Modal */
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg:hover {
+    opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modal {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    height: 90%;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content,
+#caption {
+    animation-name: zoom;
+    animation-duration: 0.5s;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 1000px) {
+    .modal-content {
+        width: 100%;
+        height: fit-content;
+    }
+}
