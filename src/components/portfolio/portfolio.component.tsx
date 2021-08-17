@@ -12,7 +12,7 @@ export const Portfolio = ({ language }: IBlockProps): JSX.Element => {
                 <img className="portfolio-image-img" src={renata} alt="men"/>
             </div>
             <div className="portfolio-links">
-                <Link to="/gallery" className="portfolio-links-link">{language === 'ENG' ? "To my gallery" : "В галерею"}</Link>
+                <Link to="/renata-landing/gallery" className="portfolio-links-link">{language === 'ENG' ? "To my gallery" : "В галерею"}</Link>
             </div>
         </div>
     );

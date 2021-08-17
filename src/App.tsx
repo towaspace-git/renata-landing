@@ -18,11 +18,11 @@ function App() {
     return (
         <BrowserRouter>
             <Switch>
-                <Route exact path="/">
+                <Route exact path="/renata-landing/">
                     <MainPage changeLanguage= {(language) => changeLanguage(language)} language={language}/>
                 </Route>
-                <Route path="/gallery">
-                  <Gallery/>
+                <Route exact path="/renata-landing/gallery">
+                  <Gallery language = {language}/>
                 </Route>
             </Switch>
         </BrowserRouter>

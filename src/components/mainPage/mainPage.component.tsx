@@ -6,7 +6,7 @@ import { Header } from '../header/header.component';
 import { Hero } from '../hero/hero.component';
 import { Portfolio } from '../portfolio/portfolio.component';
 import { Skills } from '../skills/skills.component';
-
+import './mainPage.css'
 export interface IPageProps {
     changeLanguage: (language: Language) => void;
     language: Language
@@ -18,7 +18,7 @@ export interface IBlockProps {
 
 export const MainPage = ({changeLanguage, language}: IPageProps): JSX.Element => {
     return (
-        <div>
+        <div className="mainPage">
             <Header changeLanguage={(language) => changeLanguage(language)} language={language}/>
             <Hero changeLanguage={(language) => changeLanguage(language)} language={language}/>
             <About language={language}/>

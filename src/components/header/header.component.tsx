@@ -38,11 +38,11 @@ export const Header = ({ changeLanguage, language }: IPageProps): JSX.Element =>
             </div>
             <div className='header-desktop'>
                 <div className="header-links">
-                    <a className="header-links-link" href="#Home" onClick={() => setIsMenuOpen(!isMenuOpen)}>{language === 'ENG' ? "Home" : "Начало"}</a>
-                    <a className="header-links-link" href="#About" onClick={() => setIsMenuOpen(!isMenuOpen)}>{language === 'ENG' ? "About me" : "Обо мне"}</a>
-                    <a className="header-links-link" href="#Skills" onClick={() => setIsMenuOpen(!isMenuOpen)}>{language === 'ENG' ? "Skills" : "Навыки"}</a>
-                    <a className="header-links-link" href="#Portfolio" onClick={() => setIsMenuOpen(!isMenuOpen)}>{language === 'ENG' ? "Portfolio" : "Портфолио"}</a>
-                    <a className="header-links-link" href="#Contacts" onClick={() => setIsMenuOpen(!isMenuOpen)}>{language === 'ENG' ? "Contacts" : "Контакты"}</a>
+                    <a className="header-links-link" href="#Home">{language === 'ENG' ? "Home" : "Начало"}</a>
+                    <a className="header-links-link" href="#About">{language === 'ENG' ? "About me" : "Обо мне"}</a>
+                    <a className="header-links-link" href="#Skills">{language === 'ENG' ? "Skills" : "Навыки"}</a>
+                    <a className="header-links-link" href="#Portfolio">{language === 'ENG' ? "Portfolio" : "Портфолио"}</a>
+                    <a className="header-links-link" href="#Contacts">{language === 'ENG' ? "Contacts" : "Контакты"}</a>
                 </div>
                 <div className="header-divider"></div>
             </div>

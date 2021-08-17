@@ -11,36 +11,10 @@ import EmOB_tbMooM from "../../assets/img/photos/EmOB_tbMooM.jpg";
 import W_JxodendBE from "../../assets/img/photos/W_JxodendBE.jpg";
 import JgR_EgrLQOY from "../../assets/img/photos/JgR-EgrLQOY.jpg";
 import tPNHFad2AH8 from "../../assets/img/photos/tPNHFad2AH8.jpg";
+import { IBlockProps } from "../mainPage/mainPage.component";
+import { images } from "../../assets/resources/gallery-images";
 
-export const Gallery = (): JSX.Element => {
-    const [currentImage, setCurrentImage] = useState({
-        show: false,
-        image: DSC_0226,
-    });
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-        var elem = document.querySelector(".grid");
-        if (elem) {
-            imagesLoaded(elem, { background: "black" }, () => {
-                if (elem) {
-                    new Masonry(elem, {
-                        itemSelector: ".grid-item",
-                        percentPosition: true,
-                    });
-                }
-            });
-        }
-    }, []);
-
-    const imageHandler = (image: string) => {
-        setCurrentImage({show: true, image: image});
-    }
-
-    const onCloseHandler = () => {
-        setCurrentImage({show: false, image: 'image'});
-    }
-
+export const Gallery = ({ language }: IBlockProps): JSX.Element => {
     const imageArray = [
         DSC_0214,
         EmOB_tbMooM,
@@ -70,25 +44,71 @@ export const Gallery = (): JSX.Element => {
         DSC_0226,
     ];
 
+    const [currentImage, setCurrentImage] = useState({
+        show: false,
+        image: DSC_0226,
+    });
+    const [imagesLeftToLoad, setImagesLeftToLoad] = useState(imageArray.length);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [imagesLeftToLoad]);
+
+    useEffect(() => {
+        var elem = document.querySelector(".grid");
+        if (elem) {
+            imagesLoaded(elem, { background: "black" }, () => {
+                if (elem) {
+                    new Masonry(elem, {
+                        itemSelector: ".grid-item",
+                        percentPosition: true,
+                    });
+                }
+            });
+        }
+    }, [imagesLeftToLoad]);
+    
+    const imageLoaderHandler = () => {
+        if (imagesLeftToLoad)
+            setImagesLeftToLoad((prevState) => {
+                return prevState - 1;
+            });
+    };
+
+    const imageHandler = (image: string) => {
+        setCurrentImage({ show: true, image: image });
+    };
+
+    const onCloseHandler = () => {
+        setCurrentImage({ show: false, image: "image" });
+    };
+
+
     return (
         <>
             <header className="gallery-header">
                 <div className="header-container">
-                    <Link to="/" className="gallery-back-link">
-                        Back
+                    <Link to="/renata-landing" className="gallery-back-link">
+                        {language === "ENG" ? "Back" : "Назад"}
                     </Link>
-                    <h1 className="gallery-title">Gallery</h1>
+                    <h1 className="gallery-title">{language === "ENG" ? "Gallery" : "Галерея"}</h1>
                 </div>
             </header>
-            <div className="main">
+            <div className="loader" >
+                <div className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            </div>
+            <div className="main" style={{visibility: imagesLeftToLoad ? 'hidden' : 'visible'}}>
                 <div className="container">
                     <div className="row">
                         <div className="grid">
                             {imageArray.map((image) => {
                                 return (
-                                    <div className="grid-item" key={image}>
-                                        <span className="grid-link" onClick={() => imageHandler(image)}>
-                                            <img className="grid-img" src={image} alt="" />
+                                    <div className="grid-item" key={image + Math.random()} >
+                                        <span
+                                            className="grid-link"
+                                            onClick={() => imageHandler(image)}
+                                        >
+                                            <img className="grid-img" src={image} alt="" onLoad={imageLoaderHandler}/>
                                         </span>
                                     </div>
                                 );
@@ -99,8 +119,10 @@ export const Gallery = (): JSX.Element => {
             </div>
             {currentImage.show && (
                 <div id="myModal" className="modal">
-                    <span className="close" onClick={onCloseHandler}>&times;</span>
-                    <img className="modal-content" id="img01" src={currentImage.image}/>
+                    <span className="close" onClick={onCloseHandler}>
+                        &times;
+                    </span>
+                    <img className="modal-content" id="img01" src={currentImage.image} />
                 </div>
             )}
         </>
