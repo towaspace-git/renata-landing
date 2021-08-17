@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/renata-landing/static/css/main.76619d41.chunk.css",
+    "main.css": "/renata-landing/static/css/main.7a9c9c8c.chunk.css",
     "main.js": "/renata-landing/static/js/main.8e69002b.chunk.js",
     "main.js.map": "/renata-landing/static/js/main.8e69002b.chunk.js.map",
     "runtime-main.js": "/renata-landing/static/js/runtime-main.62d69805.js",
@@ -10,7 +10,7 @@
     "static/js/3.55c03e42.chunk.js": "/renata-landing/static/js/3.55c03e42.chunk.js",
     "static/js/3.55c03e42.chunk.js.map": "/renata-landing/static/js/3.55c03e42.chunk.js.map",
     "index.html": "/renata-landing/index.html",
-    "static/css/main.76619d41.chunk.css.map": "/renata-landing/static/css/main.76619d41.chunk.css.map",
+    "static/css/main.7a9c9c8c.chunk.css.map": "/renata-landing/static/css/main.7a9c9c8c.chunk.css.map",
     "static/js/2.f622ec78.chunk.js.LICENSE.txt": "/renata-landing/static/js/2.f622ec78.chunk.js.LICENSE.txt",
     "static/media/DSC_0214.60fd6ba8.jpg": "/renata-landing/static/media/DSC_0214.60fd6ba8.jpg",
     "static/media/DSC_0226.eadf3c3d.jpg": "/renata-landing/static/media/DSC_0226.eadf3c3d.jpg",
@@ -25,7 +25,7 @@
   "entrypoints": [
     "static/js/runtime-main.62d69805.js",
     "static/js/2.f622ec78.chunk.js",
-    "static/css/main.76619d41.chunk.css",
+    "static/css/main.7a9c9c8c.chunk.css",
     "static/js/main.8e69002b.chunk.js"
   ]
 }
