@@ -60,10 +60,16 @@
     .hero{
         width: 800px;
     }
+    .hero-text-title {
+        font-size: 30px;
+    }
 }
 @media screen and (max-width: 900px){
     .hero{
         width: 700px;
+    }
+    .hero-text-title {
+        font-size: 30px;
     }
 }
 @media screen and (max-width: 768px){

@@ -1,18 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import men from "../../assets/img/men.png";
 import "./gallery.css";
-import jQuery from "jquery";
-import imagesLoaded from "imagesloaded";
-import Masonry from "masonry-layout";
 import DSC_0214 from "../../assets/img/photos/DSC_0214.jpg";
 import DSC_0226 from "../../assets/img/photos/DSC_0226.jpg";
 import EmOB_tbMooM from "../../assets/img/photos/EmOB_tbMooM.jpg";
 import W_JxodendBE from "../../assets/img/photos/W_JxodendBE.jpg";
 import JgR_EgrLQOY from "../../assets/img/photos/JgR-EgrLQOY.jpg";
 import tPNHFad2AH8 from "../../assets/img/photos/tPNHFad2AH8.jpg";
+import Masonry from "react-masonry-css";
 import { IBlockProps } from "../mainPage/mainPage.component";
-import { images } from "../../assets/resources/gallery-images";
 
 export const Gallery = ({ language }: IBlockProps): JSX.Element => {
     const imageArray = [
@@ -44,45 +40,45 @@ export const Gallery = ({ language }: IBlockProps): JSX.Element => {
         DSC_0226,
     ];
 
+    const breakpointColumnsObj = {
+        default: 3,
+        700: 2,
+        500: 1
+    };
+
     const [currentImage, setCurrentImage] = useState({
         show: false,
         image: DSC_0226,
     });
+
     const [imagesLeftToLoad, setImagesLeftToLoad] = useState(imageArray.length);
+
 
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, [imagesLeftToLoad]);
+    }, []);
 
     useEffect(() => {
-        var elem = document.querySelector(".grid");
-        if (elem) {
-            imagesLoaded(elem, { background: "black" }, () => {
-                if (elem) {
-                    new Masonry(elem, {
-                        itemSelector: ".grid-item",
-                        percentPosition: true,
-                    });
-                }
-            });
+        if (currentImage.show) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "visible";
         }
-    }, [imagesLeftToLoad]);
-    
-    const imageLoaderHandler = () => {
-        if (imagesLeftToLoad)
-            setImagesLeftToLoad((prevState) => {
-                return prevState - 1;
-            });
-    };
+    }, [currentImage]);
 
-    const imageHandler = (image: string) => {
+    const imageHandler = (image: string): void => {
         setCurrentImage({ show: true, image: image });
     };
 
-    const onCloseHandler = () => {
+    const onCloseHandler = (): void => {
         setCurrentImage({ show: false, image: "image" });
     };
 
+    const imageLoaded = (): void => {
+        if (imagesLeftToLoad) {
+            setImagesLeftToLoad(imagesLeftToLoad - 1);
+        }
+    }
 
     return (
         <>
@@ -94,36 +90,54 @@ export const Gallery = ({ language }: IBlockProps): JSX.Element => {
                     <h1 className="gallery-title">{language === "ENG" ? "Gallery" : "Галерея"}</h1>
                 </div>
             </header>
-            <div className="loader" >
-                <div className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-            </div>
-            <div className="main" style={{visibility: imagesLeftToLoad ? 'hidden' : 'visible'}}>
+            {imagesLeftToLoad && (
+                <div className="loader">
+                    <div className="lds-roller">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            )}
+
+            <div className="main" style={{ visibility: !imagesLeftToLoad ? "visible" : "hidden" }}>
                 <div className="container">
-                    <div className="row">
-                        <div className="grid">
+                        <Masonry breakpointCols={breakpointColumnsObj} className='masonry-grid' columnClassName="masonry-grid_column" >
                             {imageArray.map((image) => {
                                 return (
-                                    <div className="grid-item" key={image + Math.random()} >
+                                    <div className="grid-item" key={image + Math.random()}>
                                         <span
                                             className="grid-link"
                                             onClick={() => imageHandler(image)}
                                         >
-                                            <img className="grid-img" src={image} alt="" onLoad={imageLoaderHandler}/>
+                                            <img className="grid-img" src={image} alt="" onLoad={imageLoaded}/>
                                         </span>
                                     </div>
                                 );
                             })}
-                        </div>
-                    </div>
+                        </Masonry>
                 </div>
             </div>
             {currentImage.show && (
-                <div id="myModal" className="modal">
-                    <span className="close" onClick={onCloseHandler}>
-                        &times;
-                    </span>
-                    <img className="modal-content" id="img01" src={currentImage.image} />
-                </div>
+                <>
+                    <div id="myModal" className="modal">
+                        <span className="close" onClick={onCloseHandler}>
+                            &times;
+                        </span>
+                        <img
+                            className="modal-content"
+                            id="img01"
+                            src={currentImage.image}
+                            alt={currentImage.image}
+                        />
+                        <div className="myModalBackdrop" onClick={onCloseHandler}></div>
+                    </div>
+                </>
             )}
         </>
     );

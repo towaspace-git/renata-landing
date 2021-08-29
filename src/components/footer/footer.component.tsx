@@ -15,19 +15,20 @@ export const Footer = ({ language }: IBlockProps): JSX.Element => {
                 </p>
             </div>
             <div className="footer-button">
-                <a target="_blank" href="https://vk.com/hamidullina2000" ><button className="footer-button-button">{language === 'ENG' ? "Send message" : "Сообщение"}</button></a>
+                <a target="_blank" rel="noreferrer" href="https://vk.com/hamidullina2000" ><button className="footer-button-button">{language === 'ENG' ? "Send message" : "Сообщение"}</button></a>
             </div>
             <div className="footer-links">
-                <a className="footer-links-link" href="https://linkedin.com">
-                    {SocialIcon('linkedin')}
-                </a>
-                <a className="footer-links-link" href="https://linkedin.com">
+                
+                <a className="footer-links-link" href="https://linkedin.com" target="_blank" rel="noreferrer">
                     {SocialIcon('instagram')}
                 </a>
-                <a className="footer-links-link" href="https://linkedin.com">
+                <a className="footer-links-link" href="https://linkedin.com" target="_blank" rel="noreferrer">
+                    {SocialIcon('instagram')}
+                </a>
+                <a className="footer-links-link" href="https://linkedin.com" target="_blank" rel="noreferrer">
                     {SocialIcon('behance')}
                 </a>
-                <a className="footer-links-link" href="https://linkedin.com">
+                <a className="footer-links-link" href="https://linkedin.com" target="_blank" rel="noreferrer">
                     {SocialIcon('dribbble')}
                 </a>
             </div>

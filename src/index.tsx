@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import $ from 'jquery';
+import CustomScroll from 'react-custom-scroll';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <CustomScroll>
+      <div style={{ height: '100vh' }}>
+        <App />
+      </div>
+    </CustomScroll>
   </React.StrictMode>,
   document.getElementById('root')
 );

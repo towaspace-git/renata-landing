@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { useCallback } from "react";
+import { useRef } from "react";
 import { BurgerIcon } from "../icons/burgerIcon.component";
 import { CloseIcon } from "../icons/closeIcon.component";
 import { IPageProps } from "../mainPage/mainPage.component";
@@ -7,11 +9,11 @@ import './header.css'
 export const Header = ({ changeLanguage, language }: IPageProps): JSX.Element => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    
+
     useEffect(() => {
         if (isMenuOpen) document.body.style.overflow = "hidden";
         else document.body.style.overflow = "visible";
-    }, [isMenuOpen])
+    }, [isMenuOpen]);
 
     return (
         <div className="header" id="Home">
