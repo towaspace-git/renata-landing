@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { BurgerIcon } from "../icons/burgerIcon.component";
 import { CloseIcon } from "../icons/closeIcon.component";
 import { IPageProps } from "../mainPage/mainPage.component";
-import './header.css'
+import './header.css';
 
 export const Header = ({ changeLanguage, language }: IPageProps): JSX.Element => {
 

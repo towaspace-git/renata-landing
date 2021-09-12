@@ -179,7 +179,7 @@ a {
 /* The Modal (background) */
 .modal {
     position: fixed; /* Stay in place */
-    z-index: 2; /* Sit on top */
+    z-index: 999999; /* Sit on top */
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -217,6 +217,8 @@ a {
     margin: auto;
     display: block;
     z-index: 20;
+    width: fit-content;
+    height: 100%;
 }
 .close {
     z-index: 20;

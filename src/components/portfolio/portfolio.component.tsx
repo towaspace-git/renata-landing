@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import './portfolio.css'
-import renata from '../../assets/img/renata2.jpg'
+import './portfolio.css';
+import renata from '../../assets/img/renata2.jpg';
 import { IBlockProps } from "../mainPage/mainPage.component";
 
 export const Portfolio = ({ language }: IBlockProps): JSX.Element => {

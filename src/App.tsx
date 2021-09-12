@@ -3,8 +3,8 @@ import "./App.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { MainPage } from "./components/mainPage/mainPage.component";
 import { Gallery } from "./components/gallery/gallery.component";
-import CustomScroll from "react-custom-scroll";
-import './css/customScroll.css'
+import './css/customScroll.css';
+
 export type Language = 'RU' | 'ENG';
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
                         <MainPage changeLanguage= {(language) => changeLanguage(language)} language={language}/>
                     </Route>
                     <Route exact path="/renata-landing/gallery">
-                    <Gallery language = {language}/>
+                        <Gallery language = {language}/>
                     </Route>
             </Switch>
         </BrowserRouter>
